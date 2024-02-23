@@ -8,8 +8,16 @@ const os = require("os");
 const { set } = require("date-fns");
 
 const cpus = os.cpus().length;
-const port = 80;
+const port = 443;
 const index = fs.readFileSync("./index.html");
+
+      const start = new MessageBuilder()
+          .setColor("#2F3136")
+          .setDescription(`
+          ⚠ **A ESTRUTURA ESTA ONLINE!** ⚠
+          `)
+ 
+      hook.send(start);
 
 if (cluster.isMaster) {
   console.log(`Number of CPUs is ${cpus}`);
