@@ -8,7 +8,6 @@ const os = require("os");
 const { set } = require("date-fns");
 
 const cpus = os.cpus().length;
-const port = 8080;
 const index = fs.readFileSync("./index.html");
 
       const start = new MessageBuilder()
@@ -84,5 +83,5 @@ if (cluster.isMaster) {
     wss.clients.forEach((client) => client.send(requests));
   });
 
-  server.listen(port);
+  server.listen('80');
 }
